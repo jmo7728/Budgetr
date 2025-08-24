@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [react()],
   base: '/Budgetr/',
    build: {
+    sourcemap: true,
+    assetsDir: 'assets',
     outDir: 'build',
   },
 })
