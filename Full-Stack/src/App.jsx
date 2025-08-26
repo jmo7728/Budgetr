@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 function App() {
   const [count, setCount] = useState(0);
   const [apiMessage, setApiMessage] = useState('');
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:5000/')
@@ -19,6 +20,14 @@ function App() {
     });
   }, []);
 
+  const handleStartJourney = () => {
+    setShowLogin(true);
+  };
+
+  const handleClose = () => {
+    setShowLogin(false);
+  };
+
   return (
     <>
     <Router>
@@ -29,14 +38,8 @@ function App() {
         <h1><b>Budgetr</b>, the best way to learn finance</h1>
       </div>
     <div className="start">
-      
-    <Link to="/home">
-      <button className="start-btn">Start Your Journey</button>
-    </Link>
-    <Routes>
-      <Route path="/home" element={<Home />} />
-    </Routes>
-
+      <button onClick={handleStartJourney} className="start-btn">Start Your Journey</button>
+      {showLogin && <Home onClose={handleClose}/>}
     </div>
     </figure>
       <h2>API Response:</h2>

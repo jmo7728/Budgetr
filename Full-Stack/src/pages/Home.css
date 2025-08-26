@@ -1,0 +1,25 @@
+.promptLogin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height : 50vh;
+    width: 25vw;
+    border:2px solid white;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index:100
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color:white;
+}
